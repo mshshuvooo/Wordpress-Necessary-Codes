@@ -1,0 +1,151 @@
+/****** Blog CSS *******/
+.post-thumbnail {
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    background-color: #ddd;
+}
+
+.post-inner {
+    padding: 15px 15px 40px 15px;
+    background-color: #F6F7F8;
+}
+
+.single-post-box {
+    margin-bottom: 40px;
+    border: 1px solid #ccc;
+}
+
+.post-meta a {
+    color: #404040 !important;
+}
+
+.post-meta span.posted-on {
+    padding-right: 10px;
+}
+
+.post-meta {
+    margin-bottom: 7px;
+}
+
+a.single-post-title {
+    display: inline-block;
+    color: #000;
+    font-size: 25px;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+
+a.post-read-more {
+    display: inline-block;
+    color: #D37102;
+    text-transform: capitalize;
+    border: 2px solid;
+    padding: 10px 40px;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 700;
+    transition: .4s;
+}
+
+a.post-read-more:hover {
+    background-color: #D37102;
+    color: #fff;
+    border-color: #D37102;
+}
+
+.sidebar-widget {
+    background-color: #F6F7F8;
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.sidebar-widget ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-widget ul li a {
+    color: #333;
+    transition: .4s;
+    display: block;
+}
+
+.sidebar-widget ul li:before {
+    position: absolute;
+    content: "\f101";
+    left: 0;
+    top: -2px;
+    font-family: fontawesome;
+    color: #D37102;
+    font-weight: 700;
+}
+
+.sidebar-widget ul li {
+    position: relative;
+    padding-left: 18px;
+    padding-bottom: 10px;
+}
+
+h4.sidebar-widget-title {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #D37102;
+    margin: 0 0 20px;
+}
+
+.sidebar-widget ul li a:hover {
+    color: #D37102;
+}
+
+.themename-post-item-wrapper {
+    padding: 60px 0;
+}
+
+.post-details {
+    border: 1px solid #ccc;
+}
+
+.post-details .post-inner {
+    padding: 15px 25px 40px 25px;
+}
+
+.post-details-wrapper {
+    padding: 60px 0;
+}
+
+.post-details .post-meta {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+form.search-form input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #999;
+}
+
+form.search-form input:focus{
+	outline: none;
+}
+
+form.search-form label {
+    width: 100%;
+}
+
+form.search-form input.search-submit {
+    background-color: #D37102;
+    border: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 13px 10px;
+    color: #fff;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 7px;
+    cursor: pointer;
+    transition: .4s;
+}
