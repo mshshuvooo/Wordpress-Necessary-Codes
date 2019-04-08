@@ -15,7 +15,8 @@ function my_theme_custom_post() {
 
 ****************************************************************************************************************************
 
-function create_movie_review() {
+add_action( 'init', 'my_theme_custom_post' );
+function my_theme_custom_post() {
     register_post_type( 'movie_reviews',
         array(
             'labels' => array(
