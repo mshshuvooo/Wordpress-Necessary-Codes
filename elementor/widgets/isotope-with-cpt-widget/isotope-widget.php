@@ -72,7 +72,8 @@ class BlueLion_Food_Menus_Widget extends \Elementor\Widget_Base {
 	 * @since 1.0.0
 	 * @access protected
 	 */
-	protected function _register_controls() {
+
+    	protected function _register_controls() {
 
 		$this->start_controls_section(
 			'content_section',
@@ -83,18 +84,23 @@ class BlueLion_Food_Menus_Widget extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
-			'url',
+			'menu-column',
 			[
-				'label' => __( 'URL', 'bluelion-ex' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'input_type' => 'url',
-				'placeholder' => __( 'https://your-link.com', 'bluelion-ex' ),
+				'label' => __( 'Menu Column', 'plugin-domain' ),
+				'type' => \Elementor\Controls_Manager::SELECT,
+				'default' => 'col-lg-4',
+				'options' => [
+					'col-lg-6'  => __( '2 Column', 'bluelion-ex' ),
+					'col-lg-4' => __( '3 Column', 'bluelion-ex' ),
+				],
 			]
 		);
 
 		$this->end_controls_section();
 
-	}
+    }
+    
+  
 
 	/**
 	 * Render BlueLion Food Menus widget output on the frontend.
@@ -115,6 +121,7 @@ class BlueLion_Food_Menus_Widget extends \Elementor\Widget_Base {
             'posts_per_page'    => -1,
 		) );
 
+
 		?>
 
 		
@@ -133,7 +140,7 @@ class BlueLion_Food_Menus_Widget extends \Elementor\Widget_Base {
 						</ul>
 					</div>
 				</div>
-				<div class="food-menus-wrapper row" id="food-menus-<?php echo esc_attr($menuDynamicId) ?>">
+				<div  class="food-menus-wrapper row" id="food-menus-<?php echo esc_attr($menuDynamicId) ?>">
 					<?php 
 						while( $foodMenus -> have_posts() ): $foodMenus -> the_post(); 
 					
@@ -149,7 +156,7 @@ class BlueLion_Food_Menus_Widget extends \Elementor\Widget_Base {
 						}
 					
 					?>
-						<div class="col-lg-4 <?php echo esc_attr( $foodAssignedCat ); ?>">
+						<div class="<?php echo esc_attr( $settings['food-menus'].$foodAssignedCat ); ?>">
 							<div class="single-food-item">
 								<div class="food-thumbnail" style="background-image:url(<?php the_post_thumbnail_url(); ?>);"></div>
 								<h4><?php the_title(); ?></h4>
