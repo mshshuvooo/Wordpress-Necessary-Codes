@@ -84,14 +84,24 @@ class BlueLion_Food_Menus_Widget extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
+			'item_per_page',
+			[
+				'label' => __( 'Menu Per Page', 'bluelion-ex' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => __( '-1', 'bluelion-ex' ),
+				'description' => __( 'Type how many food menus you want to show. Type -1 for showing all menus.', 'bluelion-ex' ),
+			]
+		);
+
+		$this->add_control(
 			'menu-column',
 			[
-				'label' => __( 'Menu Column', 'plugin-domain' ),
+				'label' => __( 'Menu Column', 'bluelion-ex' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
-				'default' => 'col-lg-4',
+				'default' => 'col-lg-4 ',
 				'options' => [
-					'col-lg-6'  => __( '2 Column', 'bluelion-ex' ),
-					'col-lg-4' => __( '3 Column', 'bluelion-ex' ),
+					'col-lg-6 ' => __( '2 Column  ', 'bluelion-ex' ),
+					'col-lg-4 ' => __( '3 Column', 'bluelion-ex' ),
 				],
 			]
 		);
@@ -118,8 +128,10 @@ class BlueLion_Food_Menus_Widget extends \Elementor\Widget_Base {
 
 		$foodMenus = new WP_Query( array(
             'post_type'         => 'food-menus',
-            'posts_per_page'    => -1,
+            'posts_per_page'    => $settings['item_per_page'],
 		) );
+
+
 
 
 		?>
@@ -128,19 +140,20 @@ class BlueLion_Food_Menus_Widget extends \Elementor\Widget_Base {
 			<div class="food-menus">
 				<div class="row">
 					<div class="col-lg-12">
-						<ul class="food-menu-filter">
-							<li data-filter="*">all</li>
+						<div class="food-filter-btns" data-target=".food-menu-filter-<?php echo esc_attr($menuDynamicId); ?>" id="">
+							<button class="active" data-filter="*">all</button>
 							<?php 
 								$terms = get_terms( 'food_menu_cat' );
 								if (! empty( $terms ) && ! is_wp_error( $terms )):
 									foreach ($terms as $term):
 							?>
-								<li data-filter=".<?php echo esc_attr($term->slug); ?>"><?php echo esc_html( $term->name ) ?></li>
+								<button data-filter=".<?php echo esc_attr($term->slug); ?>"><?php echo esc_html( $term->name ) ?></button>
 							<?php endforeach; endif; ?>
-						</ul>
+						</div>
 					</div>
 				</div>
-				<div  class="food-menus-wrapper row" id="food-menus-<?php echo esc_attr($menuDynamicId) ?>">
+
+				<div class="food-menu-filter-<?php echo esc_attr($menuDynamicId); ?> row">
 					<?php 
 						while( $foodMenus -> have_posts() ): $foodMenus -> the_post(); 
 					
@@ -156,8 +169,7 @@ class BlueLion_Food_Menus_Widget extends \Elementor\Widget_Base {
 						}
 					
 					?>
-						<div class="<?php echo esc_attr( $settings['food-menus'].$foodAssignedCat ); ?>">
-							<div class="single-food-item">
+						<div class="single-food-item <?php echo esc_attr( $settings['menu-column'] . $foodAssignedCat ); ?>">
 								<div class="food-thumbnail" style="background-image:url(<?php the_post_thumbnail_url(); ?>);"></div>
 								<h4><?php the_title(); ?></h4>
 								<?php 
@@ -167,17 +179,13 @@ class BlueLion_Food_Menus_Widget extends \Elementor\Widget_Base {
 								?>
 									<p><span><?php echo esc_html("Price: ")?></span><?php echo $foodPrice; ?></p>
 								<?php endif; endif;  ?>
-							</div>
 						</div>
-					<?php endwhile; ?>
+					<?php endwhile; wp_reset_postdata(); ?>
 				</div>
 			</div>
 		
 		<?php 
 		
-
-
-        
 
 	}
 
