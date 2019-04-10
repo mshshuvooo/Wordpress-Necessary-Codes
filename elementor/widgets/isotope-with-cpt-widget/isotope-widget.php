@@ -127,8 +127,8 @@ class BlueLion_Food_Menus_Widget extends \Elementor\Widget_Base {
 		
 
 		$foodMenus = new WP_Query( array(
-            'post_type'         => 'food-menus',
-            'posts_per_page'    => $settings['item_per_page'],
+            		'post_type'         => 'food-menus',
+            		'posts_per_page'    => $settings['item_per_page'],
 		) );
 
 
@@ -170,15 +170,8 @@ class BlueLion_Food_Menus_Widget extends \Elementor\Widget_Base {
 					
 					?>
 						<div class="single-food-item <?php echo esc_attr( $settings['menu-column'] . $foodAssignedCat ); ?>">
-								<div class="food-thumbnail" style="background-image:url(<?php the_post_thumbnail_url(); ?>);"></div>
-								<h4><?php the_title(); ?></h4>
-								<?php 
-									if( function_exists('the_field') ):
-									$foodPrice = get_field('food_price');
-									if( $foodPrice ):
-								?>
-									<p><span><?php echo esc_html("Price: ")?></span><?php echo $foodPrice; ?></p>
-								<?php endif; endif;  ?>
+							<div class="food-thumbnail" style="background-image:url(<?php the_post_thumbnail_url(); ?>);"></div>
+							<h4><?php the_title(); ?></h4>
 						</div>
 					<?php endwhile; wp_reset_postdata(); ?>
 				</div>
