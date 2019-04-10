@@ -1,22 +1,30 @@
 (function($) {
     var foodMenuFilter = function ($scope, $) {
-        var $menuFilter = $scope.find('.food-menus-wrapper');
-        var $menuDaynamicId = '#' + $menuFilter.attr('id');
-        
 
-            $($menuDaynamicId ).each( function() {
-                $(".food-menu-filter li").on("click", function(){
-                    
-                    var selector = $(this).attr("data-filter");
-                    $($menuDaynamicId ).isotope({
-                        filter: selector
-                    });
-                });
-                $($menuDaynamicId ).isotope();
+        $('.food-filter-btns').each( function( i, filterDaynamicId ) {
+            var $filterDaynamicId = $( filterDaynamicId );
+
+            var grid = $filterDaynamicId.data('target');
+                $(grid).isotope({
+                    itemSelector: '.single-food-item',
+                })
+                
+          // filter items on button click
+            $filterDaynamicId.on( 'click', 'button', function() {
+                var $this = $( this );
+                // filter isotope
+                var filterValue = $this.attr('data-filter');
+                $(grid).isotope({ filter: filterValue })
+                // change selected
+                $filterDaynamicId.find('.active').removeClass('active');
+                $this.addClass('active');
             });
-        
-        
-        
+
+
+
+
+        });
+
     };
 
     $(window).on('elementor/frontend/init', function () {
