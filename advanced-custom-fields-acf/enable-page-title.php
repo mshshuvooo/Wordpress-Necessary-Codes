@@ -1,3 +1,4 @@
+<?php
 if( function_exists('the_field') ):
 	$enablePageTitle = get_field('enable_page_title');
 	$customPageTitle = get_field('custom_page_title');
