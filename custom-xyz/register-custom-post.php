@@ -14,33 +14,32 @@ function my_theme_custom_post() {
 
 
 ****************************************************************************************************************************
-
 add_action( 'init', 'my_theme_custom_post' );
 function my_theme_custom_post() {
     register_post_type( 'movie_reviews',
         array(
             'labels' => array(
-                'name' => 'Movie Reviews',
-                'singular_name' => 'Movie Review',
-                'add_new' => 'Add New',
-                'add_new_item' => 'Add New Movie Review',
-                'edit' => 'Edit',
-                'edit_item' => 'Edit Movie Review',
-                'new_item' => 'New Movie Review',
-                'view' => 'View',
-                'view_item' => 'View Movie Review',
-                'search_items' => 'Search Movie Reviews',
-                'not_found' => 'No Movie Reviews found',
-                'not_found_in_trash' => 'No Movie Reviews found in Trash',
-                'parent' => 'Parent Movie Review'
+                'name'               => esc_html__( 'Movie Reviews', 'text-domain' ),
+                'singular_name'      => esc_html__( 'Movie Review', 'text-domain' ),
+                'add_new'            => esc_html__( 'Add New', 'text-domain' ),
+                'add_new_item'       => esc_html__( 'Add New Movie Review', 'text-domain' ),
+                'edit'               => esc_html__( 'Edit', 'text-domain' ),
+                'edit_item'          => esc_html__( 'Edit Movie Review', 'text-domain' ),
+                'new_item'           => esc_html__( 'New Movie Review', 'text-domain' ),
+                'view'               => esc_html__( 'View', 'text-domain' ),
+                'view_item'          => esc_html__( 'View Movie Review', 'text-domain' ),
+                'search_items'       => esc_html__( 'Search Movie Reviews', 'text-domain' ),
+                'not_found'          => esc_html__( 'No Movie Reviews found', 'text-domain' ),
+                'not_found_in_trash' => esc_html__( 'No Movie Reviews found in Trash', 'text-domain' ),
+                'parent'             => esc_html__( 'Parent Movie Review', 'text-domain' )
             ),
  
-            'public' => true,
+            'public'        => true,
             'menu_position' => 15,
-            'supports' => array( 'title', 'editor', 'comments', 'thumbnail', 'custom-fields' ),
-            'taxonomies' => array( '' ),
-            'menu_icon' => plugins_url( 'images/image.png', __FILE__ ),
-            'has_archive' => true
+            'supports'      => array( 'title', 'editor', 'comments', 'thumbnail', 'custom-fields' ),
+            'taxonomies'    => array( '' ),
+            'menu_icon'     => plugins_url( 'images/image.png', __FILE__ ),
+            'has_archive'   => true
         )
     );
 }
