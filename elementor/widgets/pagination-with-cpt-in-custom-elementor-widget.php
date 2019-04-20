@@ -143,7 +143,7 @@ class Listings_Widget extends \Elementor\Widget_Base {
 		?>
 
 
-    <div class="listing-items-wrapper">
+        	<div class="listing-items-wrapper">
 			<div class="row">
 				<?php while( $listingsQ -> have_posts() ): $listingsQ -> the_post(); ?>
 				<div class="col-lg-6">
