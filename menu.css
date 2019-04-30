@@ -1,0 +1,70 @@
+
+.mainmenu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mainmenu ul li {
+    display: inline-block;
+    position: relative;
+}
+
+.mainmenu ul li a {
+    text-transform: uppercase;
+    display: block;
+    padding: 20px 25px;
+    transition: 0.4s;
+    font-size: 17px;
+    color: #fff;
+}
+
+.mainmenu ul li:last-child > a {
+    border: none;
+}
+
+.mainmenu li ul {
+    position: absolute;
+    top: 48px;
+    width: 200px;
+    z-index: 2;
+    background: #a07d4e;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.mainmenu li ul li a {
+    text-transform: capitalize;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+}
+
+.mainmenu li ul li {
+    display: block;
+}
+
+.mainmenu ul li:hover > ul {
+    visibility: visible;
+    opacity: 1;
+    top: 64px;
+
+}
+
+.mainmenu ul li > a {
+    transition: 0.3s;
+}
+
+.mainmenu ul li:hover > a {
+    background: #ba8d5e;
+}
+
+.mainmenu ul ul li ul {
+    left: 100%;
+    top: 28px;
+}
+
+.mainmenu ul ul li:hover > ul {
+    top: 0;
+}
