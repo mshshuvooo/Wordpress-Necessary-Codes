@@ -266,7 +266,7 @@ class Elementor_slider_Widget extends \Elementor\Widget_Base {
 									echo wpautop( $slide['slideText'] );
 									$target   = $slide['btnUrl']['is_external'] ? ' target="_blank"' : '';
 									$nofollow = $slide['btnUrl']['nofollow'] ? ' rel="nofollow"' : '';
-									if( !empty($slide['btnText']) ){
+									if( !empty( $slide['btnText'] && $slide['btnUrl']['url'] ) ){
 										echo '<a href="'.esc_url( $slide['btnUrl']['url'] ).'" '. $target . $nofollow .' class="boxed-btn">'.esc_html( $slide['btnText'] ).'</a>';
 									}
 								 ?>
