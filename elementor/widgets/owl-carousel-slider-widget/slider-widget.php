@@ -241,7 +241,7 @@ class Elementor_slider_Widget extends \Elementor\Widget_Base {
             $this->add_render_attribute(
                 'slider-wrapper',
                 [
-                    'class'                 => 'pnw-slider-wrapper',
+                    'class'                 => 'pnw-slider-wrapper owl-carousel',
                     'id'                    => 'pnw-slider-'.esc_attr($sliderDynamicId),
                     'data-countslide'       => $countSlide,
                     'data-dots'             => $dots,
