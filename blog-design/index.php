@@ -13,12 +13,22 @@
  */
 
 get_header();
+
+
+if(is_home()) {
+	$page_for_posts = get_option( 'page_for_posts' );
+	$postPageThumbnail = get_the_post_thumbnail_url($page_for_posts, 'full');
+	$postPageTitle = get_the_title( get_option('page_for_posts', true) );
+}
+
+
+
 ?> 
-	<div class="breadcrumb-area">
+	<div class="breadcrumb-area" style="background-image: url(<?php echo $postPageThumbnail ; ?>);">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<h3><?php echo esc_html__('News', 'themename'); ?></h3>
+					<h3><?php echo $postPageTitle; ?></h3>
 					<?php if(function_exists('bcn_display')) bcn_display(); ?>
 				</div>
 			</div>
