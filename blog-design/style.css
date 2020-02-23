@@ -149,3 +149,25 @@ form.search-form input.search-submit {
     cursor: pointer;
     transition: .4s;
 }
+
+
+.themename-navigation span, .themename-navigation a {
+    border: 1px solid #D37102;
+    padding: 10px 15px;
+    transition: .4s;
+}
+
+.themename-navigation span {
+    background-color: #D37102;
+    color: #fff;
+    border-color: #D37102 !important;
+}
+
+.themename-navigation a {
+    color: #333;
+}
+
+.themename-navigation a:hover {
+    background-color: #D37102;
+    color: #fff;
+}
