@@ -1,0 +1,11 @@
+selector {
+    display: flex;
+    justify-content: center;
+}
+
+selector .elementor-heading-title{
+    transform: rotate(-90deg);
+    white-space: nowrap;
+    width: 20px;
+   height: 20px;
+}
