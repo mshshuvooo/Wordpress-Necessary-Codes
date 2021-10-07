@@ -1,0 +1,5 @@
+Need WP plugin: Custom PHP Settings
+
+//php.ini code
+memory_limit=512M;
+max_execution_time=600;
