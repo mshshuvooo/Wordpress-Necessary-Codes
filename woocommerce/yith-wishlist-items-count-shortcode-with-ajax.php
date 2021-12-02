@@ -1,14 +1,16 @@
 <?php
 
+
 if ( defined( 'YITH_WCWL' ) && ! function_exists( 'yith_wcwl_get_items_count' ) ) {
 	function yith_wcwl_get_items_count() {
 	  ob_start();
 	  ?>
 		<a href="<?php echo esc_url( YITH_WCWL()->get_wishlist_url() ); ?>">
-		  <span class="yith-wcwl-items-count">
-			<i class="fa fa-heart"></i>
-			<span><?php echo esc_html( yith_wcwl_count_all_products() ); ?></span>
-		  </span>
+		  	<p class="yith-wcwl-items-count">
+				<i class="fa fa-heart">
+					<span><?php echo esc_html( yith_wcwl_count_all_products() ); ?></span>
+				</i>
+			</p>
 		</a>
 	  <?php
 	  return ob_get_clean();
@@ -48,3 +50,6 @@ if ( defined( 'YITH_WCWL' ) && ! function_exists( 'yith_wcwl_get_items_count' ) 
   
 	add_action( 'wp_enqueue_scripts', 'yith_wcwl_enqueue_custom_script', 20 );
   }  
+
+
+
