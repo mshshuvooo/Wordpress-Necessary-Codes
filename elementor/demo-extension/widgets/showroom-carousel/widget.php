@@ -6,7 +6,7 @@
  *
  * @since 1.0.0
  */
-class Elementor_slider_Widget extends \Elementor\Widget_Base {
+class Elementor_Plista_Showroom_Carousel extends \Elementor\Widget_Base {
 	/**
 	 * Get widget name.
 	 *
