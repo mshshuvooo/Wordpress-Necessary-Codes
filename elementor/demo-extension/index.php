@@ -266,7 +266,7 @@ final class Plista_Addons {
 		require_once( __DIR__ . '/widgets/showroom-carousel/widget.php' );
 
 		// Register widget
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor_slider_Widget() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor_Plista_Showroom_Carousel() );
 
 	}
 
