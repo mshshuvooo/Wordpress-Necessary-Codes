@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Create Widget Category
  */
 
-function add_elementor_widget_categories( $elements_manager ) {
+function plista_addon_widget_categories( $elements_manager ) {
 
     $elements_manager->add_category(
         'plista-addons',
@@ -29,7 +29,7 @@ function add_elementor_widget_categories( $elements_manager ) {
     );
     
 }
-add_action( 'elementor/elements/categories_registered', 'add_elementor_widget_categories' );
+add_action( 'elementor/elements/categories_registered', 'plista_addon_widget_categories' );
 
 
 
