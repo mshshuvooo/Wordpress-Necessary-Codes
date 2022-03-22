@@ -1,3 +1,5 @@
+<?php
+
 add_filter( 'woocommerce_register_post_type_product', 'msh_products_post_type_name_change' );
  
 function msh_products_post_type_name_change( $args ){
