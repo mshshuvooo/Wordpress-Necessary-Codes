@@ -1,0 +1,36 @@
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const header = document.getElementById("stickyheader");
+    const onScroll = () => {
+      const scroll = document.documentElement.scrollTop
+      if ( scroll > 500) {
+        header.classList.add('stickyheader-active');
+      } else {
+        header.classList.remove('stickyheader-active');
+      }
+    }
+    window.addEventListener('scroll', onScroll)
+  })
+</script>
+
+<style>
+
+  #stickyheader {
+      transition: all .4s ease;
+      opacity: 0;
+      visibility: hidden;
+      height: 0;
+      position: fixed;
+      top: -20px;
+  }
+
+  .stickyheader-active{
+      z-index: 9 !important;
+      top: 0 !important;
+      left: 0 !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      height: 95px !important;
+  }
+
+</style>
